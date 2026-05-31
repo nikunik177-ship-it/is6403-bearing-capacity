@@ -1,7 +1,7 @@
 services:
-  - type: worker
+  - type: web
     name: is6403-bearing-capacity
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python main.py
+    startCommand: python3 -m uvicorn main:app --host 0.0.0.0 --port $PORT
     plan: free
