@@ -2,6 +2,7 @@
 Module: Ultimate Bearing Capacity Analytical Core Engine
 Leverages Object-Oriented Programming (OOP) paradigms and saves data results to files.
 """
+# pyrefly: ignore [missing-import]
 from is_6403_factors import interpolate_bearing_factors, compute_shape_factors
 
 class FoundationProfile:
