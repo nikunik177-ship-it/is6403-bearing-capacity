@@ -393,7 +393,6 @@ HTML_PAGE = """
 </html>
 """
 
-from fastapi.responses import HTMLResponse
 from jinja2 import Environment
 
 jinja_env = Environment()
