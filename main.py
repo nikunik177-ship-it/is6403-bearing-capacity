@@ -3,6 +3,10 @@ Main Application Interface - FastAPI Web Server
 IS 6403:1981 Geotechnical Bearing Capacity Estimator
 Wraps the analytical engine in a web interface for Render deployment.
 """
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
@@ -440,10 +444,6 @@ async def calculate(
             safe_caps.append(r["q_net_safe"])
 
         # 4. Generate matplotlib chart → base64
-        import matplotlib
-        matplotlib.use("Agg")
-        import matplotlib.pyplot as plt
-
         fig, ax = plt.subplots(figsize=(8, 4))
         fig.patch.set_facecolor("#1e1b4b")
         ax.set_facecolor("#16123a")
